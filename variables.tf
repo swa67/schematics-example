@@ -1,4 +1,8 @@
-variable "region" {}
+variable "region" {
+  description = "Image name used for VSI."
+  type        = string
+  default     = "us-south"
+}
 
 variable image {
   description = "Image name used for VSI."
