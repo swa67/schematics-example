@@ -23,12 +23,6 @@ data "ibm_is_ssh_key" "example" {
   name = "sh-ssh-key"
 }
 
-/* resource "ibm_is_ssh_key" "example" {
-  name       = "example-ssh"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVej9WuRIj55zQKVt6KPPYih9fLUb/6n2KA+yXkQD3m0S0wDHzyIwnqHFvi018DpsTGiB2XqmkqR8qOjU8f5qHslCQwscn4SJqnB6arD0fe1+YFqlFGprk1qz++6lVpTiArWjQPAoK+DkBCu/AaXbIYb6pru6xq1tLBK0aXX15SwLcA2MVz8gevB485qx2ogQRJdXBmYc+GHLpa3vq4g8iFRxwS6CDi/uw+dPoSNsWPOpPNaRSwcq4sQVGoySlmXgtEopdLE2YR5SXqnjSV78smm6iV1vGtQgSncZ6wV9VrWrJMljw8FKBtKwfdxngM/sby6kxDijFF1XCjcN+QTzR Shahid.Ali2@sa.ibm.com"
-  resource_group = data.ibm_resource_group.group.id
-} */
-
 resource "ibm_is_instance" "example" {
   name = "example-instance"
   image = data.ibm_is_image.image.id
@@ -71,8 +65,8 @@ resource "ibm_is_security_group_rule" "example2" {
   direction = "inbound"
   remote    = "0.0.0.0/0"
   tcp {
-    port_min = 8080
-    port_max = 8080
+    port_min = 80
+    port_max = 80
   }
 }
 
