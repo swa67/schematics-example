@@ -2,6 +2,7 @@
 #   Example `main.tf`:
      # The configuration for the `remote` backend.
      terraform {
+/*
        backend "remote" {
          # The name of your Terraform Cloud organization.
          organization = "example-organization"
@@ -11,6 +12,17 @@
            name = "example-workspace"
          }
        }
+*/
+       backend "s3" {
+         bucket                      = "sh-tfstate"
+         key                         = "global.tfstate"
+         region                      = "us-south"
+         skip_region_validation      = true
+         skip_credentials_validation = true
+         skip_metadata_api_check     = true
+         endpoint                    = "https://config.cloud-object-storage.cloud.ibm.com"
+       }
+
      }
 
      # An example resource that does nothing.
