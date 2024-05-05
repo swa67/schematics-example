@@ -23,8 +23,8 @@
          skip_credentials_validation = true
          skip_metadata_api_check     = true
          endpoint                    = "https://config.cloud-object-storage.cloud.ibm.com"
-         access_key                  = "${access_key}"
-         secret_key                  = "${secret_key}"
+         access_key                  = var.access_key
+         secret_key                  = var.secret_key
        }
      }
 
