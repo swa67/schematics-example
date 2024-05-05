@@ -20,7 +20,7 @@
          skip_region_validation      = true
          skip_credentials_validation = true
          skip_metadata_api_check     = true
-         endpoint                    = "https://config.cloud-object-storage.cloud.ibm.com"
+         endpoints.s3                    = "https://config.cloud-object-storage.cloud.ibm.com"
        }
 
      }
