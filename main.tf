@@ -23,8 +23,8 @@
          skip_credentials_validation = true
          skip_metadata_api_check     = true
          endpoint                    = "https://config.cloud-object-storage.cloud.ibm.com"
-         access_key                  = var.access_key
-         secret_key                  = var.secret_key
+         access_key                  = data.ibm_resource_key.key.credentials["cos_hmac_keys.access_key_id"]
+         secret_key                  = data.ibm_resource_key.key.credentials["cos_hmac_keys.secret_access_key"]
        }
      }
 
@@ -35,6 +35,7 @@
        }
      }
 
+/*
 variable "access_key" {
   description = "The prefix to append to your resources"
   type        = string
@@ -45,6 +46,7 @@ variable "secret_key" {
   description = "The prefix to append to your resources"
   type        = string
 }
+*/
 
 data "ibm_resource_instance" "resource" {
   name = "icos-sh-tfstate"
@@ -55,9 +57,10 @@ data "ibm_resource_key" "key" {
   name                  = "sh-icos-credentials"
   resource_instance_id  = data.ibm_resource_instance.resource.id
 }
+
 output "access_key_id" {
-  access_key = data.ibm_resource_key.key.credentials["cos_hmac_keys.access_key_id"]
+  value = data.ibm_resource_key.key.credentials["cos_hmac_keys.access_key_id"]
 }
 output "secret_access_key" {
-  secret_key = data.ibm_resource_key.key.credentials["cos_hmac_keys.secret_access_key"]
+  value = data.ibm_resource_key.key.credentials["cos_hmac_keys.secret_access_key"]
 }
