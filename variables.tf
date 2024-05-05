@@ -4,6 +4,7 @@ variable "region" {
   default     = "us-south"
 }
 
+
 variable image {
   description = "Image name used for VSI."
   type        = string
