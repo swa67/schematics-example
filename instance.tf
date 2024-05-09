@@ -95,7 +95,7 @@ resource "ibm_is_security_group_rule" "example5" {
   direction = "outbound"
   remote    = "0.0.0.0/0"
   udp {
-    port_min = 53
-    port_max = 53
+    port_min = 533
+    port_max = 533
   }
 }
