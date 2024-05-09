@@ -1,2 +1,2 @@
 # schematics-example
-Schematics Example 
+Schematics Example 2
